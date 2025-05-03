@@ -5,7 +5,7 @@
 	public record GetProductByCategoryResponse(IEnumerable<Product> Products);
 
 	public class GetByCategoryHadler(IDocumentSession session, ILogger<GetByCategoryRequest> logger)
-		: IRequestHandler<GetByCategoryRequest, GetProductByCategoryResponse>
+		: MediatR.IRequestHandler<GetByCategoryRequest, GetProductByCategoryResponse>
 	{
 		public async Task<GetProductByCategoryResponse> Handle(GetByCategoryRequest request, CancellationToken cancellationToken)
 		{

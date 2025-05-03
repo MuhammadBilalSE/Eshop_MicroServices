@@ -8,7 +8,7 @@ namespace Catalog.API.Products.GetById
 	public record GetProductByIdResponse(Product Product);
 
 	public class GetByIDHadler (IDocumentSession session)
-		: IRequestHandler<GetByIdRequest, GetProductByIdResponse>
+		: MediatR.IRequestHandler<GetByIdRequest, GetProductByIdResponse>
 	{
 		public async Task<GetProductByIdResponse> Handle(GetByIdRequest request, CancellationToken cancellationToken)
 		{

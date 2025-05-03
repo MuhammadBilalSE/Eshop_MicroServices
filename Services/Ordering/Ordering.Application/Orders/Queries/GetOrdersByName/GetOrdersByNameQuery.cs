@@ -1,0 +1,9 @@
+﻿using MediatR;
+using Ordering.Application.Dtos;
+
+namespace Ordering.Application.Orders.Queries.GetOrdersByName;
+
+public record GetOrdersByNameQuery(string Name)
+    : IRequest<GetOrdersByNameResult>;
+
+public record GetOrdersByNameResult(IEnumerable<OrderDto> Orders);

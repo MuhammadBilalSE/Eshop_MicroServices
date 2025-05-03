@@ -22,7 +22,7 @@ namespace Catalog.API.Products.Update
 		}
 	}
 	public class UpdateHandler(IDocumentSession session)
-		: IRequestHandler<UpdateProductCommand, UpdateProductResult>
+		: MediatR.IRequestHandler<UpdateProductCommand, UpdateProductResult>
 	{
 		public async Task<UpdateProductResult> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
 		{

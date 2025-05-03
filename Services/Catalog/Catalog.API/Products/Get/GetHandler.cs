@@ -8,7 +8,7 @@ namespace Catalog.API.Products.Get
 	public record GetProductResult(IEnumerable<Product> Products);
 
 	public class GetHandler(IDocumentSession session, ILogger<GetHandler> logger) :
-		IRequestHandler<GetProductQuery, GetProductResult>
+        MediatR.IRequestHandler<GetProductQuery, GetProductResult>
 	{
 		public async Task<GetProductResult> Handle(GetProductQuery request, CancellationToken cancellationToken)
 		{

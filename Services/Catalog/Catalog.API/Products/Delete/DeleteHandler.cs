@@ -14,7 +14,7 @@ namespace Catalog.API.Products.Delete
 		}
 	}
 	public class DeleteHandler(IDocumentSession session)
-		: IRequestHandler<DeleteProductCommand, DeleteProductResponse>
+		: MediatR.IRequestHandler<DeleteProductCommand, DeleteProductResponse>
 	{
 		public async Task<DeleteProductResponse> Handle(DeleteProductCommand request, CancellationToken cancellationToken)
 		{

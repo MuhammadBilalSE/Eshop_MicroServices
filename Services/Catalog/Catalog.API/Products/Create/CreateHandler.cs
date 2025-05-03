@@ -19,7 +19,7 @@ public class CreateProductCommandValidator : AbstractValidator<CreateProductComm
 
 public class CreateProductCommandHandler
 	(IDocumentSession session)
-	: IRequestHandler<CreateProductCommand, CreateProductResult>
+	: MediatR.IRequestHandler<CreateProductCommand, CreateProductResult>
 {
 	public async Task<CreateProductResult> Handle(CreateProductCommand command, CancellationToken cancellationToken)
 	{
