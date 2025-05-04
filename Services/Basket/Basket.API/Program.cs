@@ -7,6 +7,7 @@ using Discount.Grpc.Protos;
 using HealthChecks.UI.Client;
 using Marten;
 using Grpc;
+using BuildingBlock.Messaging.MassTransit;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -46,7 +47,7 @@ builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(
 			HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
 		};
 	});
-
+builder.Services.AddMessageBraker(builder.Configuration);
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 builder.Services.AddHealthChecks()
 	.AddNpgSql(builder.Configuration.GetConnectionString("DataCenter")!)
