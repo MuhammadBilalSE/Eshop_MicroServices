@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace Ordering.Application.Orders.EventHandler
 {
-	public class OrderCreatedEventHanlder(ILogger<OrderUpdatedEvent> logger) : INotificationHandler<OrderUpdatedEvent>
+	public class OrderCreatedEventHanlder(ILogger<OrderUpdatedEvent> logger) : INotificationHandler<OrderCreatedEvent>
 	{
-		public Task Handle(OrderUpdatedEvent notification, CancellationToken cancellationToken)
+		public Task Handle(OrderCreatedEvent notification, CancellationToken cancellationToken)
 		{
 			logger.LogInformation($"Domain Event Handled : {notification.GetType().Name}");
 			return Task.CompletedTask;	

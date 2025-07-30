@@ -20,10 +20,6 @@ namespace Ordering.Application.Orders.EventHandler.Integration
 			logger.LogInformation($"Inegration Event {context.Message.GetType().Name} Handled");
 			var command = MapToCreateOrderCommand(context.Message);
 			await sender.Send(command);
-			
-			
-			
-			throw new NotImplementedException();
 		}
 
 		private CreateOrderCommand MapToCreateOrderCommand(BasketCheckoutEvent message)
